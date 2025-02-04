@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "therushij10/my-portfolio:latest"  // Your Docker Hub image
-        EC2_USER = "ubuntu"  // Change to 'ec2-user' if using Amazon Linux
-        EC2_HOST = "13.233.190.129"  // Your EC2 Public IP
-        SSH_CREDENTIALS_ID = "aws-key"  // Jenkins Credentials ID for SSH
-        DOCKER_HUB_CREDENTIALS = "docker-hub-credentials"  // Jenkins Credentials ID for Docker Hub
+        IMAGE_NAME = "therushij10/my-portfolio:latest"
+        EC2_USER = "ubuntu"
+        EC2_HOST = "13.233.190.129"
+        SSH_CREDENTIALS_ID = "aws-key"  // Make sure this exists in Jenkins Credentials
+        DOCKER_HUB_CREDENTIALS = "docker-hub-credentials"
     }
 
     stages {
@@ -32,7 +32,7 @@ pipeline {
 
         stage('Deploy to AWS EC2') {
             steps {
-                sshagent([SSH_CREDENTIALS_ID]) {
+                sshagent(['aws-key']) {  // Ensure 'aws-key' exists in Jenkins Credentials
                     sh """
                     ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} << EOF
                         docker stop my-portfolio || true
