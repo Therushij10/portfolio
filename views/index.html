@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rushikesh Jadhav - Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Rushikesh Jadhav</h1>
+        <p>Linux System Administrator | AWS Cloud | DevOps</p>
+    </header>
+
+    <section class="dropdown">
+        <div class="header" onclick="toggleSection('about')">
+            <img src="/images/about.png" alt="About Logo" class="icon">
+            <h2>About Me</h2>
+        </div>
+        <div id="about" class="content">
+            <p>IT engineer with expertise in Linux, AWS, and network security.</p>
+        </div>
+    </section>
+
+    <section class="dropdown">
+        <div class="header" onclick="toggleSection('experience')">
+            <img src="/images/experience.png" alt="Experience Logo" class="icon">
+            <h2>Experience</h2>
+        </div>
+        <div id="experience" class="content">
+            <p>Worked at SafeSquid Labs as a Linux System Administrator.</p>
+        </div>
+    </section>
+
+    <section class="dropdown">
+        <div class="header" onclick="toggleSection('projects')">
+            <img src="/images/projects.png" alt="Projects Logo" class="icon">
+            <h2>Projects</h2>
+        </div>
+        <div id="projects" class="content">
+            <ul>
+                <li>System Information Monitoring Script</li>
+                <li>Serverless Web Application Development</li>
+                <li>Full-stack Web Application Deployment on AWS</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="dropdown">
+        <div class="header" onclick="toggleSection('contact')">
+            <img src="/images/contact.png" alt="Contact Logo" class="icon">
+            <h2>Contact</h2>
+        </div>
+        <div id="contact" class="content">
+            <p>Email: rushikeshjadhav.1031@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/rushikesh-jadhav-3ba18b237" target="_blank">Profile</a></p>
+        </div>
+    </section>
+</body>
+</html>
